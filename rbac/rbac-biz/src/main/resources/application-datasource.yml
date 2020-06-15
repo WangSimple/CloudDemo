@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    #mysql8以下使用
+    #driver-class-name: com.mysql.jdbc.Driver
+    #mysql8以上使用
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://127.0.0.1:3306/springclouddemo?characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: system

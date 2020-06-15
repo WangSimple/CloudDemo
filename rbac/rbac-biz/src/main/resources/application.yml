@@ -1,0 +1,10 @@
+server:
+  port: 8083
+  servlet:
+      # 项目contextPath
+      context-path: /rbac
+
+spring:
+  profiles:
+  #datasource,mybatisplus
+    include: datasource,mybatisplus

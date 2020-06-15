@@ -1,0 +1,12 @@
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+      feild-strategy: not-empty
+      table-underline: true
+      db-type: mysql
+      logic-delete-value: 1
+      logic-not-delete-value: 1
+  mapper-location: classpath:/mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
