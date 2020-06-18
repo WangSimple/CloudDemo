@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.cloud</groupId>
-		<artifactId>cloudDemo</artifactId>
+		<artifactId>rbac</artifactId>
 		<version>1.0</version>
 	</parent>
 	<artifactId>rbac-biz</artifactId>
@@ -14,6 +14,7 @@
 		<start-class>com.cloud.rbacserver.RbacBizApplication</start-class>
 	</properties>
 	<dependencies>
+
 		<dependency>
 			<groupId>com.cloud</groupId>
 			<artifactId>rbac-api</artifactId>
@@ -39,10 +40,7 @@
 			<artifactId>druid</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>com.baomidou</groupId>
-			<artifactId>mybatis-plus-boot-starter</artifactId>
-		</dependency>
+
 		<!--代码生成器-->
 		<!--<dependency>
 			<groupId>com.baomidou</groupId>

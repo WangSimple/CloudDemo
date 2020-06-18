@@ -1,6 +1,6 @@
 package com.cloud.rbacserver.mapper;
 
-import com.cloud.rbacserver.dto.UserDto;
+import com.cloud.rbacapi.dto.UserDto;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

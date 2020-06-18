@@ -1,17 +1,19 @@
-package com.cloud.rbacserver.dto;
+package com.cloud.rbacapi.dto;
+
 
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.sql.Timestamp;
 
 @Data
-@TableName("userinfo")
-public class UserDto {
+@TableName("t_userinfo")
+public class UserDto{
     @TableId(value = "user_id",type = IdType.UUID)
     private String userId;
     @TableField("user_name")
@@ -19,9 +21,18 @@ public class UserDto {
     private String phone;
     private String address;
     private Integer age;
+    @TableField(exist = false)
+    private Integer maxAge;
+    @TableField(exist = false)
+    private Integer minAge;
     private Boolean gender;
-    private Timestamp createtime;
-    private Timestamp updatetime;
+    @TableField(exist = false)
+    @JsonFormat(pattern = "yyyy-mm-dd HH:mm:dd",timezone = "GMT+8")
+    private Timestamp beginCreatetime;
+    @TableField(exist = false)
+    @JsonFormat(pattern = "yyyy-mm-dd HH:mm:dd",timezone = "GMT+8")
+    private Timestamp endCreatetime;
+
 
     public static void main(String[] args) {
         UserDto userDto=new UserDto();
