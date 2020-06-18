@@ -29,12 +29,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper,UserDto> implements 
 
     @Override
     public List<UserDto> searchUser(UserDto userDto) {
-        List<UserDto> userDtoList = this.query().like(!StringUtils.isEmpty(userDto.getUserName()), "user_name", userDto.getUserName())
-                .gt(userDto.getMinAge() != null, "age", userDto.getMinAge())
-                .lt(userDto.getMaxAge() != null, "age", userDto.getMaxAge())
-                .gt(userDto.getBeginCreatetime() != null, "createtime", userDto.getBeginCreatetime())
-                .lt(userDto.getEndCreatetime() != null, "createtime", userDto.getEndCreatetime())
-                .eq(userDto.getGender() != null, "gender", userDto.getGender()).list();
+        List<UserDto> userDtoList = this.list(getUserQueryWrapper(userDto));
         return userDtoList;
     }
 
