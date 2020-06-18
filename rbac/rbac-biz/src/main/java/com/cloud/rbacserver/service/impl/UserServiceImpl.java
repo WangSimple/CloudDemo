@@ -1,7 +1,7 @@
 package com.cloud.rbacserver.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.cloud.rbacapi.dto.QueryCondition;
 import com.cloud.rbacapi.dto.UserDto;
@@ -39,9 +39,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper,UserDto> implements 
     }
 
     @Override
-    public Page<UserDto> searchUserPage(QueryCondition<UserDto> condition) {
-        this.getBaseMapper().selectPage(new Page<UserDto>(condition.getPageNum(),condition.getPageSize()), getUserQueryWrapper(condition.getData()));
-        return null;
+    public IPage<UserDto> searchUserPage(QueryCondition<UserDto> condition) {
+        IPage<UserDto> userDtoIPage = this.getBaseMapper().selectPage(condition.getPage(), getUserQueryWrapper(condition.getData()));
+        return userDtoIPage;
     }
 
     private QueryWrapper<UserDto> getUserQueryWrapper(UserDto userDto){
