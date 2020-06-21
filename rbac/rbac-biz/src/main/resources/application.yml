@@ -1,10 +1,12 @@
 server:
-  port: 8083
   servlet:
       # 项目contextPath
       context-path: /rbac
 
 spring:
+  application:
+    name: @artifactId@
+    version: @version@
   profiles:
-  #datasource,mybatisplus
+    active: @package.environment@
     include: datasource,mybatisplus

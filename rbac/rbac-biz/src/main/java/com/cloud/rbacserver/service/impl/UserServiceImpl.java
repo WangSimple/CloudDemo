@@ -3,11 +3,12 @@ package com.cloud.rbacserver.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.cloud.rbacapi.dto.QueryCondition;
-import com.cloud.rbacapi.dto.UserDto;
+import com.cloud.rbac.api.dto.QueryCondition;
+import com.cloud.rbac.api.dto.UserDto;
 import com.cloud.rbacserver.mapper.UserMapper;
 import com.cloud.rbacserver.service.UserService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import java.util.List;
@@ -38,6 +39,13 @@ public class UserServiceImpl extends ServiceImpl<UserMapper,UserDto> implements 
         IPage<UserDto> userDtoIPage = this.getBaseMapper().selectPage(condition.getPage(), getUserQueryWrapper(condition.getData()));
         return userDtoIPage;
     }
+
+    @Transactional
+    @Override
+    public boolean saveUsers(List<UserDto> users) {
+        return this.saveOrUpdateBatch(users);
+    }
+
 
     private QueryWrapper<UserDto> getUserQueryWrapper(UserDto userDto){
         QueryWrapper<UserDto> wrapper=new QueryWrapper<UserDto>();

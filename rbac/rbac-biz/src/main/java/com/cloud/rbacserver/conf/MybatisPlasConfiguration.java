@@ -5,11 +5,12 @@ import com.baomidou.mybatisplus.extension.plugins.PerformanceInterceptor;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.context.annotation.Profile;
+import org.springframework.transaction.PlatformTransactionManager;
 
 import java.util.Properties;
 
-@EnableTransactionManagement
+//开启事务管理，springboot项目无需添加该注解@EnableTransactionManagement
 @Configuration
 @MapperScan("com.cloud.rbacserver.mapper")
 public class MybatisPlasConfiguration {
@@ -34,11 +35,24 @@ public class MybatisPlasConfiguration {
      * @date 2020/6/18 16:17
      */
     @Bean
+    @Profile({"dev","test"})// 设置 dev test 环境开启
     public PerformanceInterceptor getPerformanceInterceptor(){
         PerformanceInterceptor performanceInterceptor = new PerformanceInterceptor();
-        Properties properties=new Properties();
-        properties.setProperty("format","true");
-        performanceInterceptor.setProperties(properties);
+        performanceInterceptor.setFormat(true);
+        performanceInterceptor.setMaxTime(10000);//ms，超过此处设置的ms则sql不执行
         return performanceInterceptor;
+    }
+
+    /**
+     * @Description 输出事务管理
+     * @param platformTransactionManager
+     * @return java.lang.Object
+     * @author xpWang
+     * @date 2020/6/21 20:24
+     */
+    @Bean
+    public Object testBean(PlatformTransactionManager platformTransactionManager){
+        System.out.println(">>>>>>>>>>" + platformTransactionManager.getClass().getName());
+        return new Object();
     }
 }

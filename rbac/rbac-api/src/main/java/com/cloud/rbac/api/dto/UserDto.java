@@ -1,4 +1,4 @@
-package com.cloud.rbacapi.dto;
+package com.cloud.rbac.api.dto;
 
 
 import com.alibaba.fastjson.JSON;

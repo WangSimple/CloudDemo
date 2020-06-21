@@ -1,4 +1,4 @@
-package com.cloud.rbacapi.dto;
+package com.cloud.rbac.api.dto;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.Data;

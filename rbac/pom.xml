@@ -15,7 +15,6 @@
         <module>rbac-biz</module>
         <module>rbac-api</module>
     </modules>
-
     <dependencies>
         <dependency>
             <groupId>com.baomidou</groupId>

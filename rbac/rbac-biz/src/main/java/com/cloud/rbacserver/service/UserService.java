@@ -2,10 +2,9 @@ package com.cloud.rbacserver.service;
 
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.cloud.rbacapi.dto.QueryCondition;
-import com.cloud.rbacapi.dto.UserDto;
+import com.cloud.rbac.api.dto.QueryCondition;
+import com.cloud.rbac.api.dto.UserDto;
 
 import java.util.List;
 
@@ -14,4 +13,5 @@ public interface UserService extends IService<UserDto> {
     String updateUser(UserDto userDto);
     List<UserDto> searchUser(UserDto userVo);
     IPage<UserDto> searchUserPage(QueryCondition<UserDto> condition);
+    boolean saveUsers(List<UserDto> users);
 }

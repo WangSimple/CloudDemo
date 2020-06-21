@@ -2,8 +2,7 @@ package com.cloud.rbacserver.mapper;
 
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.cloud.rbacapi.dto.UserDto;
-import org.junit.Before;
+import com.cloud.rbac.api.dto.UserDto;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
