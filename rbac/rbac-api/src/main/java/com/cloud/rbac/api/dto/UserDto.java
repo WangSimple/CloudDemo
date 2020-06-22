@@ -7,13 +7,15 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import java.sql.Timestamp;
 
 @Data
 @TableName("t_userinfo")
-public class UserDto{
+public class UserDto extends BaseDto{
     @TableId(value = "user_id",type = IdType.UUID)
     private String userId;
     @TableField("user_name")
@@ -27,12 +29,26 @@ public class UserDto{
     private Integer minAge;
     private Boolean gender;
     @TableField(exist = false)
-    @JsonFormat(pattern = "yyyy-mm-dd HH:mm:dd",timezone = "GMT+8")
     private Timestamp beginCreatetime;
     @TableField(exist = false)
-    @JsonFormat(pattern = "yyyy-mm-dd HH:mm:dd",timezone = "GMT+8")
     private Timestamp endCreatetime;
 
+    @JsonIgnore
+    public Timestamp getBeginCreatetime() {
+        return beginCreatetime;
+    }
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    public void setBeginCreatetime(Timestamp beginCreatetime) {
+        this.beginCreatetime = beginCreatetime;
+    }
+    @JsonIgnore
+    public Timestamp getEndCreatetime() {
+        return endCreatetime;
+    }
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    public void setEndCreatetime(Timestamp endCreatetime) {
+        this.endCreatetime = endCreatetime;
+    }
 
     public static void main(String[] args) {
         UserDto userDto=new UserDto();

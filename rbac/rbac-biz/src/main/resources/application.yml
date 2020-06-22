@@ -3,6 +3,13 @@ server:
       # 项目contextPath
       context-path: /rbac
 
+eureka:
+  instance:
+    hostname: localhsot
+  client:
+    service-url:
+      defaultZone: http://localhost:8801/eureka/
+
 spring:
   application:
     name: @artifactId@
@@ -10,6 +17,20 @@ spring:
   profiles:
     active: @package.environment@
     include: datasource,mybatisplus
+
+cas:
+  #cas服务端地址
+  server-url-prefix: http://localhost:8180/cas
+  #cas服务端登录地址
+  server-login-url: http://localhost:8180/cas/login
+  #客户端地址
+  client-host-url: http://localhost:${server.port}
+
+  #Ticket校验器
+  validation-type: CAS
+
+#自定义logoutpath
+logout-path: ${cas.server-url-prefix}/logout?service=${cas.server-login-url}
 
 #web starter包含boot starter,boot starter包含logging starter,slf4j的依赖在logging starter中
 #官方推荐使用的xml名字的格式为：logback-spring.xml而不是logback.xml，因为带spring后缀的可以使用<springProfile>这个标签。

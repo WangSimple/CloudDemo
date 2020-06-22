@@ -8,6 +8,9 @@
     <artifactId>cloudDemo</artifactId>
     <packaging>pom</packaging>
     <version>1.0</version>
+    <modules>
+        <module>casserver</module>
+    </modules>
 
     <!--<packaging>pom</packaging>-->
     <properties>
@@ -23,6 +26,7 @@
         <mysql.version>8.0.11</mysql.version>
         <jackson.version>2.9.0</jackson.version>
         <swagger.version>2.4.0</swagger.version>
+        <cas.version>2.1.0-GA</cas.version>
     </properties>
 
     <dependencyManagement>
@@ -63,6 +67,11 @@
                 <version>${mysql.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>net.unicon.cas</groupId>
+                <artifactId>cas-client-autoconfig-support</artifactId>
+                <version>${cas.version}</version>
+            </dependency>
         </dependencies>
 
     </dependencyManagement>
