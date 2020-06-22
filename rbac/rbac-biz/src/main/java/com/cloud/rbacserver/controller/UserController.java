@@ -35,6 +35,7 @@ public class UserController{
     @ApiOperation("根据ID查询")
     @GetMapping("/{userid}")
     public ResponseEntity<UserDto> getUser(@PathVariable("userid") String userId){
+        log.info("get user : "+userId);
         UserDto userDto = userService.getById(userId);
         if (userDto == null) {
             return new ResponseEntity<UserDto>( HttpStatus.NOT_FOUND);

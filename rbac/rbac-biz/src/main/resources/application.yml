@@ -10,3 +10,10 @@ spring:
   profiles:
     active: @package.environment@
     include: datasource,mybatisplus
+
+#web starter包含boot starter,boot starter包含logging starter,slf4j的依赖在logging starter中
+#官方推荐使用的xml名字的格式为：logback-spring.xml而不是logback.xml，因为带spring后缀的可以使用<springProfile>这个标签。
+logging:
+  #默认logback-spring.xml ，实际无需配置
+  config: classpath:logback-spring.xml
+

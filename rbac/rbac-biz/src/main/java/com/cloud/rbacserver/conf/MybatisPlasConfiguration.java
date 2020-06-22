@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.transaction.PlatformTransactionManager;
 
-import java.util.Properties;
 
 //开启事务管理，springboot项目无需添加该注解@EnableTransactionManagement
 @Configuration
