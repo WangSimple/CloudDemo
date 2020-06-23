@@ -15,7 +15,7 @@ import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-class UserMapperTest {
+public class UserMapperTest {
     private UserDto condition;
     private QueryWrapper<UserDto> wrapper;
     private UserDto user;

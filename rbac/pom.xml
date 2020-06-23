@@ -10,11 +10,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>rbac</artifactId>
+    <version>1.0</version>
 
     <modules>
         <module>rbac-biz</module>
         <module>rbac-api</module>
     </modules>
+    <!--解决must be "pom" but is "jar"-->
+    <packaging>pom</packaging>
     <dependencies>
         <dependency>
             <groupId>com.baomidou</groupId>

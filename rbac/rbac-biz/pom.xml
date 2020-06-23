@@ -8,7 +8,6 @@
 		<version>1.0</version>
 	</parent>
 	<artifactId>rbac-biz</artifactId>
-	<version>1.0</version>
 
 	<properties>
 		<start-class>com.cloud.rbacserver.RbacBizApplication</start-class>
@@ -75,8 +74,6 @@
 	</profiles>
 
 	<build>
-
-
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
