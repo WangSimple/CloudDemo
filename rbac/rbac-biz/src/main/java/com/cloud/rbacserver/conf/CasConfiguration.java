@@ -6,7 +6,7 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@EnableCasClient
+//@EnableCasClient 开发的时候先把cas关了，省的开一堆东西
 public class CasConfiguration extends CasClientConfigurerAdapter{
 
     @Override

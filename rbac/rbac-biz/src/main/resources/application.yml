@@ -10,13 +10,28 @@ eureka:
     service-url:
       defaultZone: http://localhost:8801/eureka/
 
+
 spring:
   application:
     name: @artifactId@
     version: @version@
   profiles:
-    active: @package.environment@
+    #active: @package.environment@
+    active: dev
     include: datasource,mybatisplus
+  activemq:
+    broker-url: tcp://localhost:61616
+    #true 表示使用内置的MQ，false则连接服务器
+    in-memory: false
+    pool:
+      #true表示使用连接池；false时，每发送一条数据创建一个连接
+      enabled: true
+      #连接池最大连接数
+      max-connections: 10
+      #空闲的连接过期时间，默认为30秒
+      idle-timeout: 30000
+
+
 
 cas:
   #cas服务端地址
@@ -25,7 +40,6 @@ cas:
   server-login-url: http://localhost:8180/cas/login
   #客户端地址
   client-host-url: http://localhost:${server.port}
-
   #Ticket校验器
   validation-type: CAS
 
@@ -37,4 +51,3 @@ logout-path: ${cas.server-url-prefix}/logout?service=${cas.server-login-url}
 logging:
   #默认logback-spring.xml ，实际无需配置
   config: classpath:logback-spring.xml
-

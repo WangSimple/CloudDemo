@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.UUID;
 
 @Controller
 @Api(tags = "登录接口")
@@ -30,6 +31,13 @@ public class LoginController {
     //@PostMapping("/login")
     @RequestMapping("/login")
     public ResponseEntity<String> login(HttpServletRequest request){
+        HttpSession session = request.getSession();
+        UUID uid = (UUID) session.getAttribute("uid");
+        if (uid==null){
+            uid = UUID.randomUUID();
+        }
+        session.setAttribute("uid",uid);
+
         log.info(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>login");
         Assertion assertion= (Assertion) request.getSession().getAttribute(AbstractCasFilter.CONST_CAS_ASSERTION);
         AttributePrincipal principal=assertion.getPrincipal();

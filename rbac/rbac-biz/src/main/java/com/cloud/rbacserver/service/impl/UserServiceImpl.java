@@ -43,6 +43,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper,UserDto> implements 
     @Transactional
     @Override
     public boolean saveUsers(List<UserDto> users) {
+        /*查看sql connection 的链接状态*/
+        this.saveOrUpdateBatch(users);
+        this.saveOrUpdateBatch(users);
+        this.saveOrUpdateBatch(users);
         return this.saveOrUpdateBatch(users);
     }
 

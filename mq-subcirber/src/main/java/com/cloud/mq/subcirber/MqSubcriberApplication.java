@@ -1,4 +1,4 @@
-package com.cloud.ribbon.consumer;
+package com.cloud.mq.subcirber;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -12,18 +12,12 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@ComponentScan
 @EnableJms
-public class RibbonConsumerApplication {
+public class MqSubcriberApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RibbonConsumerApplication.class, args);
+		SpringApplication.run(MqSubcriberApplication.class, args);
 	}
 
-	@Bean
-	@LoadBalanced
-	@Autowired
-	RestTemplate restTemplate(){
-		return new RestTemplate();
-	}
+
 }

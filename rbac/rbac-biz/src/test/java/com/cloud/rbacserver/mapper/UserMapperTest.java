@@ -19,7 +19,7 @@ public class UserMapperTest {
     private UserDto condition;
     private QueryWrapper<UserDto> wrapper;
     private UserDto user;
-    @BeforeEach
+    @BeforeEach //junit 5.0开始使用BeforeEach
     public void init(){
         String str="{\n" +
                 "    \"userId\": \"188df20401d43ed3c599570df8b0bc9c\",\n" +
