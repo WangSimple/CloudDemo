@@ -10,7 +10,7 @@
 	<artifactId>rbac-biz</artifactId>
 
 	<properties>
-		<start-class>com.cloud.rbacserver.RbacBizApplication</start-class>
+		<start-class>org.simple.rbac.server.RbacBizApplication</start-class>
 	</properties>
 	<dependencies>
 
@@ -79,6 +79,19 @@
 		<dependency>
 			<groupId>org.messaginghub</groupId>
 			<artifactId>pooled-jms</artifactId>
+		</dependency>
+
+		<!--activiti 工作流-->
+		<dependency>
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-spring-boot-starter-basic</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.mybatis</groupId>
+					<artifactId>mybatis</artifactId>
+				</exclusion>
+			</exclusions>
+
 		</dependency>
 	</dependencies>
 

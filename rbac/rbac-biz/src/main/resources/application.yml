@@ -30,6 +30,11 @@ spring:
       max-connections: 10
       #空闲的连接过期时间，默认为30秒
       idle-timeout: 30000
+  activiti:
+    database-schema-update: true
+    process-definition-location-prefix: "classpath*:/bpmn/*.bpmn"
+    history-level: full
+    db-history-used: true #配置生成history表,默认false,只会生成17张表
 
 
 
