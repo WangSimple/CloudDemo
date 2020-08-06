@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.cloud</groupId>
+		<groupId>org.simple</groupId>
 		<artifactId>rbac</artifactId>
 		<version>1.0</version>
 	</parent>
@@ -15,7 +15,7 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>com.cloud</groupId>
+			<groupId>org.simple</groupId>
 			<artifactId>rbac-api</artifactId>
 			<version>1.0</version>
 		</dependency>
@@ -81,18 +81,7 @@
 			<artifactId>pooled-jms</artifactId>
 		</dependency>
 
-		<!--activiti 工作流-->
-		<dependency>
-			<groupId>org.activiti</groupId>
-			<artifactId>activiti-spring-boot-starter-basic</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>org.mybatis</groupId>
-					<artifactId>mybatis</artifactId>
-				</exclusion>
-			</exclusions>
 
-		</dependency>
 	</dependencies>
 
 	<profiles>

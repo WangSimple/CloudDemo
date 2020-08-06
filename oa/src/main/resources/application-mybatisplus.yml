@@ -1,0 +1,15 @@
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml
+  global-config:
+      db-config:
+        #主键类型 AUTO:“数据库ID自增”, INPUT:“用户输入ID”, ID_WORKER:“全局唯一ID (数字类型唯一ID)”, UUID:“全局唯一ID UUID”
+        id-type: UUID
+        feild-strategy: not-empty
+        #默认驼峰转大写策略
+        table-underline: true
+        db-type: mysql
+        logic-delete-value: 1
+        logic-not-delete-value: 1
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
