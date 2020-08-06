@@ -5,3 +5,5 @@
 - Activiti
 - Swagger2
 - Redis
+- MybatisPlus
+- cas
