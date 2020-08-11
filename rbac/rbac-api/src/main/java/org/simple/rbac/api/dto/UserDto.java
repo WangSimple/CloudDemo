@@ -59,4 +59,14 @@ public class UserDto extends BaseDto{
         String str = JSON.toJSONString(userDto);
         System.out.println(str);
     }
+    public static UserDto getAdimn(){
+        UserDto userDto=new UserDto();
+        userDto.setUserId("-1");
+        userDto.setAddress("XXXXX,XXXXXXX,XXXX");
+        userDto.setAge(0);
+        userDto.setGender(true);
+        userDto.setPhone("010-000000");
+        userDto.setUserName("管理员");
+        return userDto;
+    }
 }

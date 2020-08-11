@@ -17,7 +17,8 @@ public class ActivitiConfiguration extends AbstractProcessEngineAutoConfiguratio
     @Bean
     public SpringProcessEngineConfiguration springProcessEngineConfiguration(PlatformTransactionManager platformTransactionManager
         , SpringAsyncExecutor springAsyncExecutor, DataSource dataSource) throws IOException {
-        System.out.println(dataSource.getClass());
+        System.out.println(platformTransactionManager);
+        System.out.println(dataSource);
         return baseSpringProcessEngineConfiguration(dataSource,platformTransactionManager,springAsyncExecutor);
     }
 

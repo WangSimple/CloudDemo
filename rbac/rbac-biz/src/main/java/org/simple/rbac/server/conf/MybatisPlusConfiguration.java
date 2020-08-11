@@ -11,8 +11,8 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 //开启事务管理，springboot项目无需添加该注解@EnableTransactionManagement
 @Configuration
-@MapperScan("com.cloud.rbacserver.mapper")
-public class MybatisPlasConfiguration {
+@MapperScan("org.simple.rbac.server.mapper")
+public class MybatisPlusConfiguration {
 
     /**
      * @Description 分页拦截器

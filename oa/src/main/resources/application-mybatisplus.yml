@@ -10,6 +10,12 @@ mybatis-plus:
         db-type: mysql
         logic-delete-value: 1
         logic-not-delete-value: 1
+  #枚举配置
+  type-enums-package: org.simple.oa.enums
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    #枚举配置
+    default-enum-type-handler: org.apache.ibatis.type.EnumOrdinalTypeHandler
+
+
 
