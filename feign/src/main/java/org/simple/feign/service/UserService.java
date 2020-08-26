@@ -17,4 +17,7 @@ public class UserService {
         return userRpc.getUserInfo(user);
     }
 
+    public String getUserById(String userId){
+        return userRpc.getUserById(userId);
+    }
 }

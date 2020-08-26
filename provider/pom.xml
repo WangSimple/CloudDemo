@@ -8,28 +8,16 @@
 		<version>1.0</version>
 	</parent>
 	<groupId>org.simple</groupId>
-	<artifactId>ribbon-consumer</artifactId>
+	<artifactId>provider</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ribbon-consumer</name>
-
-
+	<name>provider</name>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.simple</groupId>
-			<artifactId>rbac-api</artifactId>
-			<version>1.0</version>
-			<!--<exclusions>
-				<exclusion>
-					<groupId>com.baomidou</groupId>
-					<artifactId>mybatis-plus-boot-starter</artifactId>
-				</exclusion>
-			</exclusions>-->
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
@@ -39,19 +27,7 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<!--activeMQ-->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-activemq</artifactId>
-		</dependency>
-		<!--mq连接池-->
-		<dependency>
-			<groupId>org.messaginghub</groupId>
-			<artifactId>pooled-jms</artifactId>
-		</dependency>
 	</dependencies>
-
-
 
 	<build>
 		<plugins>

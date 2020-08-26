@@ -4,10 +4,10 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient("ribbon-consumer")
+@FeignClient("RIBBON-consumer")
 public interface GetHello {
 
-    @RequestMapping("/consumer/say")
+    @RequestMapping("/consumer/test/say")
     String sayHello(@RequestParam("name") String name);
 
 

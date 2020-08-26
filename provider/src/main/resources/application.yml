@@ -1,0 +1,19 @@
+server:
+  port: 8802
+  servlet:
+    context-path: /provider
+
+eureka:
+  instance:
+    hostname: localhost
+    #eureka微服务实例名称修改，不采用默认的
+    #instance-id: test-provider
+  client:
+    service-url:
+      defaultZone: http://localhost:8801/eureka/
+
+spring:
+  application:
+    name: provider
+
+

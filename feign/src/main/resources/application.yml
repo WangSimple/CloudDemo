@@ -5,7 +5,34 @@ eureka:
 
 server:
   port: 8802
+  servlet:
+    context-path: /feign
+
+
+feign:
+  hystrix:
+  #feign使用熔断器必须加上这个
+    enabled: true
+  client:
+    config:
+       default:
+          #只看连接是否超时
+          connectTimeout: 10000
+          #返回超时
+          readTimeout: 10000
+
+hystrix:
+  command:
+    #这里可以根据 feign配置（Feign Client Name），根据接口配置
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
 
 spring:
   application:
     name: feign-consumer
+  main:
+    #使用feign的时候两个 client重名，所以要加上这个
+    allow-bean-definition-overriding: true

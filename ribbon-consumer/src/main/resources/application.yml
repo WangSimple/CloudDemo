@@ -5,6 +5,8 @@ eureka:
 
 server:
   port: 8805
+  servlet:
+    context-path: /consumer
 
 spring:
   application:
