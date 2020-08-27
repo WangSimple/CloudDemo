@@ -1,0 +1,57 @@
+server:
+  port: 10010
+
+spring:
+  application:
+    name: zuul-gateway
+
+zuul:
+  routes:
+    provider:  # 这里是路由id，随意写
+      #url: http://127.0.0.1:8081 # 映射路径对应的实际url地址
+      #path: /provider/** # 这里是映射路径
+      #serviceId: provider
+      provider: /provider/** #跟上面那种写法一样
+    feign:
+      path: /feign/**
+      serviceId: FEIGN-CONSUMER
+
+  retryable: true
+  ignored-patterns: /ignore/**
+   # 允许敏感头，设置为空就行了
+   #默认的敏感头信息通过zuul.sensitiveHeaders参数定义，默认包括cookie,set-Cookie,authorization三个属性
+  sensitive-headers:
+  #host:
+  #    connect-timeout-millis: 3000
+  #    socket-timeout-millis: 3000
+
+#website:
+  #ribbon:
+   # listOfServers: http://localhost:8801
+  #prefix: /gate
+
+
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+        #isolation:
+        #  thread:
+        #    timeoutInMilliseconds: 6000 # 设置Hystrix的超时时间为6000ms，默认是1000ms
+
+
+
+ribbon:
+  ConnectTimeout: 250 # Ribbon的连接超时时间
+  ReadTimeout: 1000 # Ribbon的数据读取超时时间
+  OkToRetryOnAllOperations: true # 是否对所有操作都进行重试
+  MaxAutoRetriesNextServer: 1 # 切换实例的重试次数
+  MaxAutoRetries: 1 # 对当前实例的重试次数
+
+eureka:
+  client:
+    registry-fetch-interval-seconds: 5 # 获取服务列表的周期
+    service-url:
+      defaultZone: http://localhost:8801/eureka/

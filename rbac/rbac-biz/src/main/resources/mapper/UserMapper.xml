@@ -13,4 +13,5 @@
     <select id="selecta" resultType="java.lang.String">
         select 'a'
     </select>
+
 </mapper>
