@@ -11,11 +11,11 @@ public class MyRunable implements Runnable {
         int i=0;
         while(!Thread.currentThread().isInterrupted()){
             System.out.println(this.getClass().getName()+"---"+(++i)+"\n");
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+//            try {
+//                Thread.sleep(1000);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
         }
         //return sb.toString();
     }

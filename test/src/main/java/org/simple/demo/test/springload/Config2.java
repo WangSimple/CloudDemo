@@ -8,12 +8,12 @@ import org.springframework.context.annotation.DependsOn;
 import org.springframework.stereotype.Service;
 
 @DependsOn("CartVo")
-@Service
+//@Service
 public class Config2 {
     @Autowired
     private UserVo userVo;
 
-    @Bean
+    //@Bean
     public ConfigBean getConfig(){
         return new ConfigBean();
     }

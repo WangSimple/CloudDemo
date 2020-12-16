@@ -4,7 +4,7 @@ import org.simple.demo.test.springload.CartVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+//@Configuration
 public class Config3 {
 
     @Autowired

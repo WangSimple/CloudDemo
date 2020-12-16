@@ -7,7 +7,7 @@ public class CallableApplication {
     private static Runnable myRun=new MyRunable();
     public static void main(String[] args) {
         testRun();
-        //testCall();
+       // testCall();
 
     }
 
@@ -38,12 +38,14 @@ public class CallableApplication {
             System.out.println(submit.isDone());
             System.out.println("---------------------------");
             Object o = submit.get(5000,TimeUnit.MILLISECONDS);
+           //Thread.sleep(3000L);
+            submit.cancel(true);
             System.out.println("---------------------------");
             System.out.println(submit.isDone());
         } catch (Exception e) {
             e.printStackTrace();
-            submit.cancel(true);
-            //executorService.shutdown();
+            //submit.cancel(true);
+            executorService.shutdown();//并不会终止目前正在运行的线程
         }
     }
 }

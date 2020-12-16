@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.annotation.PostConstruct;
 
-@Configuration
+//@Configuration
 public class SpringloadTest {
 
     @Autowired
@@ -21,7 +21,7 @@ public class SpringloadTest {
         System.out.println("SpringloadTest constructor");
     }
 
-    @Bean(name="CartVo")
+    //@Bean(name="CartVo")
     public CartVo getCartVo(){
         System.out.println("getCartVo");
         return new CartVo();

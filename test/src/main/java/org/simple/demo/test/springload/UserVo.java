@@ -3,7 +3,7 @@ package org.simple.demo.test.springload;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 @Data
 public class UserVo {
     private  Integer userID;

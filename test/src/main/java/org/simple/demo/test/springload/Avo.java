@@ -4,7 +4,7 @@ import lombok.Data;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
-@Configuration
+//@Configuration
 @Data
 public class Avo {
 
