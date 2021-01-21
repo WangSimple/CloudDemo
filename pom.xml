@@ -21,7 +21,7 @@
         <druid.version>1.1.10</druid.version>
         <fastjson.version>1.2.47</fastjson.version>
         <mysql.version>8.0.11</mysql.version>
-        <jackson.version>2.9.0</jackson.version>
+        <jackson.version>2.12.1</jackson.version>
         <swagger.version>2.4.0</swagger.version>
         <cas.version>2.1.0-GA</cas.version>
         <!--jedis版本 3.2不兼容-->
